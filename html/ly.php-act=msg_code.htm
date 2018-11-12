@@ -1,0 +1,139 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="Generator" content="inhe v1.0" />
+<meta http-equiv="Content-Type" content="text/html; charset=gbk" />
+<title>反馈查询</title>
+<meta name="Keywords" content="我要举报" />
+<meta name="Description" content="我要举报" />
+<link rel="stylesheet" type="text/css" href="report.css" tppabs="http://www.hbjgjt.cn/themes/default/css/report.css">
+<script src="swfobject_modified.js" tppabs="http://www.hbjgjt.cn/themes/default/Scripts/swfobject_modified.js" type="text/javascript"></script>
+<script src="validate.js" tppabs="http://www.hbjgjt.cn/themes/default/js/validate.js" type="text/javascript"></script>
+<SCRIPT>
+
+function Check(){
+	
+  if(document.theForm.msg_szfh.value==""){
+		alert("请填写身份证号!");
+		document.theForm.msg_szfh.focus();
+	return false;
+	}
+  else
+  {
+	  if(!vCheck_numberid(document.theForm.msg_szfh.value))
+	  {
+		alert("身份证格式不正确，请核对后重新填写!");
+		document.theForm.msg_szfh.focus();
+	return false;  
+	 }
+   }
+if(document.theForm.msg_title.value==""){
+		alert("请填写标题题!");
+		document.theForm.msg_title.focus();
+	return false;
+	}
+	
+	if(document.theForm.msg_area.value==""){
+		alert("请填写留言内容!");
+		document.theForm.msg_area.focus();
+	return false;
+	}	
+	if(document.theForm.username.value==""){
+		alert("请填写联系人姓名!");
+		document.theForm.username.focus();
+	return false;
+	}	
+ if(document.theForm.msg_address.value==""){
+		alert("请填写联系地址!");
+		document.theForm.msg_address.focus();
+	return false;
+	}
+if(document.theForm.msg_phone.value==""){
+		alert("请填写联系电话!");
+		document.theForm.msg_phone.focus();
+	return false;
+	}
+
+if(document.theForm.msg_email.value==""){
+		alert("请填写电子邮箱!");
+		document.theForm.msg_email.focus();
+	return false;
+	}
+else{
+		if(!vCheck_email(document.theForm.msg_email.value))
+		{
+			alert("邮箱格式不正确，请核对后重新填写!");
+			document.theForm.msg_email.focus();
+		return false;
+			}
+	}
+
+if(document.theForm.captcha.value==""){
+		alert("请填写验证码");
+		document.theForm.captcha.focus();
+		return false;
+	}
+	
+}
+
+</SCRIPT>
+</head>
+
+<body onselectstart="return false;" oncopy="return false;" oncut="return false;" ondragstart="return false;">
+<div class="report"> 
+  
+  <div class="reporttop">
+    <object id="FlashID" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="1000" height="185">
+      <param name="movie" value="top.swf" tppabs="http://www.hbjgjt.cn/swf/top.swf">
+      <param name="quality" value="high">
+      <param name="wmode" value="opaque">
+      <param name="swfversion" value="6.0.65.0">
+      
+      <param name="expressinstall" value="expressInstall.swf" tppabs="http://www.hbjgjt.cn/js/expressInstall.swf">
+       
+      <!--[if !IE]>-->
+      <object type="application/x-shockwave-flash" data="top.swf" tppabs="http://www.hbjgjt.cn/themes/default/swf/top.swf" width="1000" height="185">
+        <!--<![endif]-->
+        <param name="quality" value="high">
+        <param name="wmode" value="opaque">
+        <param name="swfversion" value="6.0.65.0">
+        <param name="expressinstall" value="expressInstall-2.swf" tppabs="http://www.hbjgjt.cn/themes/default/js/expressInstall.swf">
+        <!--[if !IE]>-->
+      </object>
+      <!--<![endif]-->
+    </object>
+  </div>
+  <script type="text/javascript">
+swfobject.registerObject("FlashID");
+</script> 
+  
+  <div class="reportbody">
+    <div class="report_tit">反馈查询</div>
+    <div class="report_con">
+      <div class="report_conL"> <a href="about.php-id=155.htm" tppabs="http://www.hbjgjt.cn/about.php?id=155"><img src="report_tit1.jpg" tppabs="http://www.hbjgjt.cn/themes/default/images/report_tit1.jpg"></a> <a href="ly.php-act=msg_code.htm" tppabs="http://www.hbjgjt.cn/ly.php?act=msg_code"><img src="report_tit2.jpg" tppabs="http://www.hbjgjt.cn/themes/default/images/report_tit2.jpg"></a> </div>
+      <div class="report_conR report_form">         <form name="theForm" method="post" action="http://www.hbjgjt.cn/ly.php">
+          <input type="hidden" name="act" value="search_msg" />
+          <table width="80%" border="0" cellspacing="0" cellpadding="0" align="center">
+            <tr>
+              <td height="105" colspan="2"></td>
+            </tr>
+            <tr>
+              <td width="23%" height="40">请输入查询码：</td>
+              <td width="77%"><input type="text" name="msg_code" class="item02" /></td>
+            </tr>
+            <tr>
+              <td height="40">请输入认证码：</td>
+              <td><input type="text" size="8" name="captcha" class="item02 item05" style="text-transform:uppercase;" />
+                &nbsp;&nbsp;<img src="captcha.php-.png" tppabs="http://www.hbjgjt.cn/captcha.php?" name="captcha" alt="captcha" id="captchaImg" style="vertical-align: middle;cursor: pointer;" onClick="this.src='captcha.php?'+Math.random()" /></td>
+            </tr>
+            <tr>
+              <td colspan="2" style="padding-left:130px;"><input type="submit" value="提交" class="submit_bg" /></td>
+            </tr>
+          </table>
+        </form>
+         </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

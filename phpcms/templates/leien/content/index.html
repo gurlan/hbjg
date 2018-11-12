@@ -1,0 +1,122 @@
+{template "content","head"}
+    <div class="index_product w1200">
+        <div class="index_publicTop">
+            <h3>产品分类</h3>
+            <i></i>
+            <p>{$CATEGORYS[22][sub_title]}</p>
+        </div>
+        <div class="index_productBom fix">
+            <div class="hd fix">
+                <em class="fix">
+                    <h3>产品分类</h3>
+                    <i></i>
+                </em>
+                <ul class="fix">
+                    {pc:content action="category" catid="22" num="10" siteid="$siteid" order="listorder ASC"}
+                    {loop $data $k=>$r}
+                    <li><span>{$r[catname]}</span></li>
+                    {/loop}
+                    {/pc}
+
+                </ul>
+            </div>
+            <div class="bd fix">
+                {pc:content action="category" catid="22" num="10" siteid="$siteid" order="listorder ASC"}
+                {loop $data $r}
+                <ul class="fix productul">
+                    {pc:content action="lists" catid="$r[catid]" num="9" siteid="$siteid" order="listorder ASC"}
+                    {loop $data $r}
+                    <li>
+                        <a href="{$r[url]}">
+                            <div class="productTu">
+                                <img src="{$r[thumb]}">
+                                <em>
+                                    <h3>{$r[title]}</h3>
+                                    <i></i>
+                                    <p>{$r[description]}</p>
+                                </em>
+                            </div>
+                            <div class="productWz">
+                                <p>{$r[title]}</p>
+                            </div>
+                        </a>
+                    </li>
+                    {/loop}
+                </ul>
+                {/loop}
+            </div>
+        </div>
+        <a href="{$CATEGORYS[22][url]}" class="more">
+             MORE  +
+        </a>
+    </div>
+    <script>
+        jQuery(".index_productBom").slide({});
+    </script>
+    <div class="w1200">
+        <div class="keynote">
+            <div class="w1200">
+
+                {$config[ad]}
+            </div>
+        </div>
+    </div>
+    <div class="index_about w1200">
+        <div class="index_publicTop">
+            <h3>关于我们</h3>
+            <i></i>
+            <p>{$CATEGORYS[126][sub_title]}</p>
+        </div>
+        <div class="index_aboutBom fix">
+            <div class="index_aboutBomLe">
+                <img src="{$CATEGORYS[126][image]}">
+            </div>
+            <div class="index_aboutBomRt">
+                <h3>北京雷恩创业科技发展有限公司</h3>
+                <i></i>
+                <p>{php echo str_cut(strip_tags($CATEGORYS[126][description]),630)}</p>
+                <a href="{$CATEGORYS[126][url]}" class="more">
+                    MORE  +
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="w1200">
+        <div class="index_news">
+           <div class="w1200">
+                <div class="index_publicTop">
+                    <h3>{$CATEGORYS[10][catname]}</h3>
+                    <i></i>
+                    <p>{$CATEGORYS[10][sub_title]}</p>
+                </div>
+                <div class="index_newsBom fix">
+                    <div class="index_newsLeft">
+                        {pc:content action="lists" catid="10" num="1" order="listorder ASC,inputtime desc" thumb="1" page="$page"}
+                        {loop $data $r}
+                        <a href="{$r[url]}">
+                            <img src="{$r[thumb]}">
+                            <p>{$r[title]} </p>
+                        </a>
+                        {/loop}
+                    </div>
+                    <div class="index_newsRight">
+                        <ul>
+                            {pc:content action="lists" catid="10" num="5" order="listorder ASC,inputtime desc" page="$page"}
+                            {loop $data $r}
+                            <li href="fix">
+                                <a href="{$r[url]}">
+                                    <p>{$r[title]}</p>
+                                    <i>{date("Y-m-d",$r[inputtime])}</i>
+                                </a>
+                            </li>
+                            {/loop}
+                        </ul>
+                    </div>
+                </div>
+                <a href="{$CATEGORYS[10][url]}" class="more">
+                    MORE  +
+                </a>
+           </div> 
+        </div>
+    </div>
+{template "content","foot"}
