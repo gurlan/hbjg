@@ -1,0 +1,46 @@
+@charset "utf-8";
+/* CSS Document */
+body,ul,li,h1,h2,h3,h4,h5,h6,p,form,dl,dt,dd,form,input,button,textarea,th,td{ margin:0; padding:0;}
+body{ font:13px/200% 'Microsoft Yahei','微软雅黑','宋体',Arial, Helvetica, sans-serif;color:#000;background:#fff;}
+h1, h2, h3, h4, h5, h6{font-weight:normal;}
+ul,li{list-style:none;}
+img,input,textarea,select,button{ border:none;}
+input,textarea,select,button{font-family:'Microsoft Yahei';background:none;}
+a{ text-decoration:none;}
+a:link,a:visited{color:#000;}
+a:hover,a:active{ color:#000;}
+a:focus,input:focus,textarea:focus{ outline:none;}
+html,body{ -webkit-text-size-adjust:none;} 
+
+.report{ width:1000px; margin:0 auto;}
+.reporttop{ height:185px; background:#2B89C7;}
+.reportbody{ height:654px; background:url("reportbody.jpg")/*tpa=http://www.hbjgjt.cn/themes/default/images/reportbody.jpg*/ no-repeat;}
+.report_tit{height:30px; line-height:30px; font-size:16px; color:#045fb0; font-weight:600; padding:60px 0 0 683px;}
+.report_con{ height:auto; overflow:hidden;}
+.report_conL{ width:106px; margin:90px 25px 0 130px; float:left;}
+.report_conL a{ width:106px; height:32px; margin-top:7px; float:left;}
+.report_conR{ width:640px; float:left;}
+.xuzhi{ padding:60px 0px 0px 60px; line-height:240%; text-align:justify;text-justify:inter-ideograph;}
+.agree{ height:30px; margin:60px 0 0 190px;}
+.agree .btn{ width:75px; height:25px; border:1px solid #92b7e1; background-color:#eff4fa; font-weight:bold; color:#045fb0; margin-right:16px; cursor:pointer; float:left;}
+
+.report_form{ margin:30px 0 0 40px;}
+.report_item{height:22px; line-height:22px; margin-bottom:15px;}
+.report_item1{ height:auto; overflow:hidden;}
+.labelname{ width:80px; height:22px; line-height:22px; float:left;}
+.labelname1{ color:red;}
+.item01{ width:170px; height:20px; line-height:20px; border:1px solid #92B7E1; border-radius:2px; float:left;}
+.xing{ font-size:12px; color:red; padding-left:5px; float:left;}
+.code{ width:66px; height:29px; float:left;}
+.item02{ width:170px; height:20px; line-height:20px; border:1px solid #92B7E1; border-radius:3px; background:#EFF4FA; float:left;}
+.item03{ width:420px; height:100px; line-height:20px;}
+.item04{ width:230px;}
+.item05{ width:140px;}
+.sL{ width:350px; float:left;}
+.sR{ width:280px; float:left;}
+.submit{ width:204px; height:46px; margin-top:94px;}
+.tj_btn,.ct_btn{ height:46px;display:block; cursor:pointer; float:left;}
+.tj_btn{ width:98px;background:url("tj_btn.jpg")/*tpa=http://www.hbjgjt.cn/themes/default/images/tj_btn.jpg*/ no-repeat;}
+.ct_btn{ width:106px;background:url("ct_btn.jpg")/*tpa=http://www.hbjgjt.cn/themes/default/images/ct_btn.jpg*/ no-repeat;}
+
+.submit_bg{ background:#0b54b0; height:25px; line-height:25px; width:80px; display:inline-block;border-radius: 5px; text-align:center; color:#fff; margin-top:15px;}

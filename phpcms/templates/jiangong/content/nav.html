@@ -1,0 +1,10 @@
+<div class="menu left">
+    <h3>{$CATEGORYS[$cat][catname]}</h3>
+    <ul class="menu_list">
+        {pc:content action="category" catid="$cat" num="25" siteid="$siteid" order="listorder ASC"}
+        {loop $data $k=>$r}
+        <li><a href="{$r[url]}" {if $k==$catid} class="now"{/if}>{$r[catname]}</a></li>
+        {/loop}
+        {/pc}
+    </ul>
+</div>

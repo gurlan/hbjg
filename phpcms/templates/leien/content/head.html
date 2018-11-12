@@ -43,7 +43,6 @@
                     <h3><a href="/">网站首页</a></h3>
                 </li>
                 {pc:content action="category" catid="0" num="25" siteid="$siteid" order="listorder ASC"}
-
                 {loop $data $v}
                 <li class="nLi {if $cat==$v[catid]} on {/if}">
                     <h3><a href="{$v[url]}">{$v[catname]}</a></h3>
