@@ -379,3 +379,15 @@
 <?php exit;?>11-09 23:29:05 | 2 | fsockopen():                   | phpcms\libs\classes\http.class.php | 84
 <?php exit;?>11-10 00:07:33 | 2 | fsockopen():                   | phpcms\libs\classes\http.class.php | 84
 <?php exit;?>11-10 00:07:43 | 2 | fsockopen():                   | phpcms\libs\classes\http.class.php | 84
+<?php exit;?>11-13 22:44:09 | 2 | extract() expects parameter 1 to be array, null given | phpcms\modules\content\classes\html.class.php | 182
+<?php exit;?>11-13 22:44:09 | 2 | fsockopen():                   | phpcms\libs\classes\http.class.php | 84
+<?php exit;?>11-13 22:46:03 | 2 | extract() expects parameter 1 to be array, null given | phpcms\modules\content\classes\html.class.php | 182
+<?php exit;?>11-13 22:46:00 | 2 | fsockopen():                   | phpcms\libs\classes\http.class.php | 84
+<?php exit;?>11-13 22:47:02 | 2 | extract() expects parameter 1 to be array, null given | phpcms\modules\content\classes\html.class.php | 182
+<?php exit;?>11-13 22:46:57 | 2 | fsockopen():                   | phpcms\libs\classes\http.class.php | 84
+<?php exit;?>11-13 22:48:13 | 2 | extract() expects parameter 1 to be array, null given | phpcms\modules\content\classes\html.class.php | 182
+<?php exit;?>11-13 22:48:00 | 2 | fsockopen():                   | phpcms\libs\classes\http.class.php | 84
+<?php exit;?>11-13 22:48:53 | 2 | fsockopen():                   | phpcms\libs\classes\http.class.php | 84
+<?php exit;?>11-13 22:50:25 | 2 | fsockopen():                   | phpcms\libs\classes\http.class.php | 84
+<?php exit;?>11-13 22:52:16 | 2 | fsockopen():                   | phpcms\libs\classes\http.class.php | 84
+<?php exit;?>11-13 22:52:33 | 2 | fsockopen():                   | phpcms\libs\classes\http.class.php | 84

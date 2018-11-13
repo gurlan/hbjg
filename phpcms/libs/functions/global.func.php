@@ -740,34 +740,34 @@ function pages($num, $curr_page, $perpage = 20, $urlrule = '', $array = array(),
 			}
 			$more = 1;
 		}
-		$multipage .= '<li>'.$num.L('page_item').'</li>';
+		$multipage .= '<a>'.$num.L('page_item').'</a>';
 		if($curr_page>0) {
-			$multipage .= ' <li><a href="'.pageurl($urlrule, $curr_page-1, $array).'" >'.L('previous').'</a></li>';
+			$multipage .= ' <a href="'.pageurl($urlrule, $curr_page-1, $array).'" >'.L('previous').'</a>';
 			if($curr_page==1) {
-				$multipage .= ' <li class="on">1</li>';
+				$multipage .= ' <a class="now">1</a>';
 			} elseif($curr_page>6 && $more) {
-				$multipage .= '<li> <a href="'.pageurl($urlrule, 1, $array).'">1</a><li> ..';
+				$multipage .= '<a href="'.pageurl($urlrule, 1, $array).'">1</a> ..';
 			} else {
-				$multipage .= ' <li> <a href="'.pageurl($urlrule, 1, $array).'">1</a></li>';
+				$multipage .= ' <a href="'.pageurl($urlrule, 1, $array).'">1</a>';
 			}
 		}
 		for($i = $from; $i <= $to; $i++) {
 			if($i != $curr_page) {
-				$multipage .= ' <li> <a href="'.pageurl($urlrule, $i, $array).'">'.$i.'</a></li>';
+				$multipage .= ' <a href="'.pageurl($urlrule, $i, $array).'">'.$i.'</a>';
 			} else {
 				$multipage .= ' <li class="on">'.$i.'</li>';
 			}
 		}
 		if($curr_page<$pages) {
 			if($curr_page<$pages-5 && $more) {
-				$multipage .= ' ..<li><a href="'.pageurl($urlrule, $pages, $array).'">'.$pages.'</a> </li><li><a href="'.pageurl($urlrule, $curr_page+1, $array).'" class="a1">'.L('next').'</a></li>';
+				$multipage .= ' ..<a href="'.pageurl($urlrule, $pages, $array).'">'.$pages.'</a> <a href="'.pageurl($urlrule, $curr_page+1, $array).'" class="a1">'.L('next').'</a>';
 			} else {
-				$multipage .= ' <li><a href="'.pageurl($urlrule, $pages, $array).'">'.$pages.'</a></li><li> <a href="'.pageurl($urlrule, $curr_page+1, $array).'" class="a1">'.L('next').'</a></li>';
+				$multipage .= ' <a href="'.pageurl($urlrule, $pages, $array).'">'.$pages.'</a><a href="'.pageurl($urlrule, $curr_page+1, $array).'" class="a1">'.L('next').'</a>';
 			}
 		} elseif($curr_page==$pages) {
-			$multipage .= ' <li class="on">'.$pages.'</li> <li><a href="'.pageurl($urlrule, $curr_page, $array).'" class="a1">'.L('next').'</a></li>';
+			$multipage .= ' <a class="now">'.$pages.'</a> <a href="'.pageurl($urlrule, $curr_page, $array).'" class="a1">'.L('next').'</a>';
 		} else {
-			$multipage .= '<li> <a href="'.pageurl($urlrule, $pages, $array).'">'.$pages.'</a></li><li><a href="'.pageurl($urlrule, $curr_page+1, $array).'" class="a1">'.L('next').'</a></li> ';
+			$multipage .= '<a href="'.pageurl($urlrule, $pages, $array).'">'.$pages.'</a><a href="'.pageurl($urlrule, $curr_page+1, $array).'" class="a1">'.L('next').'</a> ';
 		}
 	}
 	return $multipage;
@@ -1394,7 +1394,7 @@ function watermark($source, $target = '',$siteid) {
  * @param $catid 栏目id
  * @param $symbol 栏目间隔符
  */
-function catpos($catid, $symbol=' > '){
+function catpos($catid, $symbol='  '){
     $category_arr = array();
     $siteids = getcache('category_content','commons');
     $siteid = $siteids[$catid];

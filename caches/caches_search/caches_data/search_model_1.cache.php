@@ -36,6 +36,18 @@ return array (
     'name' => '营销网络',
     'sort' => '0',
   ),
+  20 => 
+  array (
+    'typeid' => '61',
+    'name' => '友情链接',
+    'sort' => '0',
+  ),
+  21 => 
+  array (
+    'typeid' => '62',
+    'name' => '视频中心',
+    'sort' => '0',
+  ),
   1 => 
   array (
     'typeid' => '1',
