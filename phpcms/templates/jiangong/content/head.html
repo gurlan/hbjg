@@ -84,6 +84,7 @@ return false;
 document.oncontextmenu=stop;
 </script>
 {php $tmp=explode(',',$CATEGORYS[$catid][arrparentid]);$num=count($tmp);}
+{php $parent = $CATEGORYS[$catid][parentid]}
 {if $num==1}
 
 {php $cat=$catid;}
@@ -93,6 +94,8 @@ document.oncontextmenu=stop;
 {php $cat=$tmp[1];}
 
 {/if}
+
+
 {pc:content action="lists" catid="26" num="1" moreinfo=1 order="listorder ASC,inputtime desc" return="config"}
 {php $config = $config[1]}
 <div class="header">

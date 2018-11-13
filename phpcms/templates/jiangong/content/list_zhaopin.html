@@ -1,0 +1,30 @@
+{template "content","head"}
+{template "content","ad"}
+<div class="container inner contanershadow">
+    {template "content","nav"}
+    <div class="content right">
+        {template "content","position"}
+        <div class="com_con">
+            <div class="job_tit"><span class="w1 w1line">招聘岗位</span> <span class="w2 w1line">招录人数</span> <span class="w3 w1line">工作地点</span> <span class="w4 w1line">学历/学位</span> <span class="w5">详情</span></div>
+            <div class="job_list">
+                {pc:content action="lists" catid="$catid" num="100" order="listorder ASC,inputtime desc" page="$page"}
+                {if $loop}
+                <ul>
+                    {loop $data $r}
+                    <li><span>{$r[zhiwei]}</span><span>{$r[renshu]}</span><span>{$r[address]}</span><span>>{$r[xueli]}</span><span>查看</span></li>
+                    {/loop}
+                </ul>
+                {else}
+                资料上传中...
+                {/if}
+            </div>
+            <div class="hrlx">
+                <h3>人力资源中心</h3>
+                <div><b>地址:&nbsp;</b>石家庄市友谊北大街146号人力资源部<br>
+                    <b>电话:&nbsp;</b>{$config[tel]}<br>
+                    <b>邮箱:&nbsp;</b><a href="{$config[email]}">{$config[email]}</a></div>
+            </div>
+        </div>
+    </div>
+</div>
+{template "content","foot"}

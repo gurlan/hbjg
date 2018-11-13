@@ -1,0 +1,23 @@
+{template "content","head"}
+{template "content","ad"}
+<div class="container inner contanershadow">
+    {template "content","nav"}
+    <div class="content right">
+        {template "content","position"}
+        <div class="com_con">
+            <div class="news_title"> {$title}</div>
+            <div class="news_update">作者：{$author}&nbsp;&nbsp;<span id="hits"></span>&nbsp;&nbsp;更新时间：{$inputtime}</div>
+            <br>
+                {$content}
+            <div class="news_pages">
+                <span>上一篇：</span><a href="{$previous_page[url]}" >{$previous_page[title]}</a><br>
+                <span>下一篇：</span><a href="{$next_page[url]}">{$next_page[title]}</a>
+            </div>
+        </div>
+    </div>
+</div>
+{template "content","foot"}
+<script language="JavaScript" src="{APP_PATH}api.php?op=count&id={$id}&modelid={$modelid}"></script>
+<script>
+    $('#hits').append('次浏览')
+</script>

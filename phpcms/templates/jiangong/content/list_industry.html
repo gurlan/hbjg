@@ -1,0 +1,33 @@
+{template "content","head"}
+{template "content","ad"}
+<div class="container inner contanershadow">
+    {template "content","nav"}
+    <div class="content right">
+        {template "content","position"}
+        <div class="com_con">
+            {template "content","menu"}
+            <div class="proCon">
+                <ul class="proImg">
+                    {pc:content action="lists" catid="$catid" num="100" order="listorder ASC,inputtime desc" }
+                    {loop $data $r}
+                    <li>
+                        <div><a href="{$r[url]}" title="{$r[title]}"><img src="{$r[thumb]}" alt="{$r[title]}"></a></div>
+                        <p><a href="{$r[url]}" title="{$r[title]}">{$r[title]}</a></p>
+                    </li>
+                    {/loop}
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+{template "content","foot"}
+<script>
+    $(function () {
+                for (var i = 0; i < $(".proImg li").length; i++) {
+                    if ((i + 1) % 5 == 0) {
+                        $(".proImg li").eq(i).css("margin-right", "0");
+                    }
+                }
+            }
+    )
+</script>

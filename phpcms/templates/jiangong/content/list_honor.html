@@ -1,0 +1,61 @@
+{template "content","head"}
+{template "content","ad"}
+<div class="container contanershadow">
+    <div class="loc inner" id="honor_loc">
+        <h3 class="left">{$CATEGORYS[$catid][catname]}</h3>
+        <p class="right"><a href="/" class="home">首页</a>  > {catpos($catid)}</p>
+    </div>
+
+
+    <div class="honor_tit">
+        <ul>
+            {pc:content action="category" catid="$cat" num="25" siteid="$siteid" order="listorder ASC"}
+            {loop $data $k=>$r}
+            <li><a href="{$r[url]}" {if $k==$catid} class="now"{/if}>{$r[catname]}</a></li>
+            {/loop}
+            {/pc}
+        </ul>
+    </div>
+
+    <div class="honor_con inner" style="min-height:380px;">
+        <table cellspacing="0" cellpadding="0" style="border-collapse:collapse;" class="honor_table">
+            <thead>
+        {pc:content action="category" catid="$parent" num="25" siteid="$siteid" order="listorder ASC"}
+        {loop $data $k=>$r}
+        <td>{$r[catname]}</td>
+        {/loop}
+        {/pc}
+
+        </thead>
+            <tbody>
+            <tr>
+                {pc:content action="category" catid="$parent" num="25" siteid="$siteid" order="listorder ASC"}
+                {loop $data $k=>$r}
+                <td>
+                    <blockquote>
+                        <ul>
+                            {pc:content action="lists" catid="$r[catid]" num="120" order="listorder ASC,inputtime desc" page="$page"}
+                            {loop $data $r}
+                            <li>{$r[title]}</li>
+                            {/loop}
+
+                        </ul>
+                    </blockquote>
+                </td>
+                {/loop}
+                {/pc}
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>
+{template "content","foot"}
+<script>
+    $(".honor_tit ul li").hover(function(){
+                $(this).find("dl").slideDown("0.2");
+            },function(){
+                $(this).find("dl").slideUp("0.2");
+            }
+    )
+</script>

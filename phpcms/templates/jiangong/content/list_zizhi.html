@@ -1,0 +1,47 @@
+{template "content","head"}
+{template "content","ad"}
+<div class="container contanershadow">
+    <div class="loc inner" id="honor_loc">
+        <h3 class="left">{$CATEGORYS[$catid][catname]}</h3>
+        <p class="right"><a href="index.php.htm" class="home">Ê×Ò³</a> > {catpos($catid)}</p>
+    </div>
+
+    <div class="honor_tit">
+        <ul>
+            {pc:content action="category" catid="$cat" num="25" siteid="$siteid" order="listorder ASC"}
+            {loop $data $k=>$r}
+            <li><a href="{$r[url]}" {if $k==$catid} class="now"{/if}>{$r[catname]}</a></li>
+            {/loop}
+            {/pc}
+        </ul>
+    </div>
+
+    <div class="honor_con inner">
+        <script type="text/javascript" src="/statics/jiangong/js/honor.js"></script>
+        <div class="mainNav_c">
+            <div class="honor" style="clear:both;">
+                <div id="imageFlow">
+                    <div class="top"></div>
+                    <div class="bank">
+                        {pc:content action="lists" catid="$catid" num="120" order="listorder ASC,inputtime desc" page="$page"}
+                        {loop $data $r}
+                        <a rel="{$r[thumb]}" title="{$r[title]}" target="_blank"></a>
+
+                        {/loop}
+                    </div>
+                    <div class="text">
+                        <div class="title">Loading</div>
+                        <div class="legend"></div>
+                    </div>
+                    <div class="scrollbar"><img class="track" src="/statics/jiangong/goh.png" alt="">
+                        <img class="arrow-left"src="/statics/jiangong/images/gol.png" alt="">
+                        <img class="arrow-right" src="/statics/jiangong/images/ggor.png" alt="">
+                        <img class="bar" src="/statics/jiangong/images/ggo.png" alt=""></div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+{template "content","foot"}

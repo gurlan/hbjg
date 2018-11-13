@@ -1,0 +1,105 @@
+{template "content","head"}
+{template "content","ad"}
+<div class="container contanershadow">
+    <div class="loc inner" id="honor_loc">
+        <h3 class="left">{$CATEGORYS[$catid][catname]}</h3>
+        <p class="right"><a href="/" class="home">首页</a>  > {catpos($catid)}</p>
+    </div>
+
+    <div class="honor_tit">
+        <ul>
+            <li><a href="honor1.php?id=10">荣誉奖牌</a>
+                <!--    <dl>
+                        <dd><a href="honor1.php?id=15">综合荣誉</a></dd>
+                        <dd><a href="honor1.php?id=16">质量荣誉</a></dd>
+                        <dd><a href="honor1.php?id=17">安全荣誉</a></dd>
+                        <dd><a href="honor1.php?id=18">党群荣誉</a></dd>
+                        <dd><a href="honor1.php?id=19">科技荣誉</a></dd>
+                        <dd><a href="honor1.php?id=20">其他荣誉</a></dd>
+                        </dl>-->
+            </li>
+            <li><a href="honor2.php?id=11" class="now">荣誉列表</a>
+
+            </li>
+        </ul>
+    </div>
+    <div class="honor_con inner" style="min-height:380px;">
+        <table cellspacing="0" cellpadding="0" style="border-collapse:collapse;" class="honor_table">
+            <thead>
+            <td>综合荣誉</td>
+            <td>质量荣誉</td>
+            <td>安全荣誉</td>
+            <td>党群荣誉</td>
+            <td>科技荣誉</td>
+            <td style="width:188px;">其他荣誉</td>
+            </thead>
+            <tbody>
+            <tr>
+                <td>
+                    <blockquote>
+                        <ul>
+                            <li>2014年中国企业五百强</li>
+                            <li>2015年全国建筑业先进企业</li>
+                            <li>2016年中国竞争力200强企业</li>
+                        </ul>
+                    </blockquote>
+                </td>
+                <td>
+                    <blockquote>
+                        <ul>
+                            <li>2016年河北奥体中心体育馆综合体钢结构工程荣获中国钢结构金奖</li>
+                            <li>2016年全国工程建设质量管理优秀企业</li>
+                            <li>2016年中国工程建设安全质量标准化“先进单位”</li>
+                            <li>2016年创国家精品工程特别荣誉企业</li>
+                        </ul>
+                    </blockquote>
+                </td>
+                <td>
+                    <blockquote>
+                        <ul>
+                            <li>2016年贯彻实施建筑施工安全标准示范单位</li>
+                            <li>2015年全国‘安康杯’竞赛优胜单位</li>
+                        </ul>
+                    </blockquote>
+                </td>
+                <td>
+                    <blockquote>
+                        <ul>
+                            <li>2014年省国资委系统先进基层党组织</li>
+                            <li>2014年河北省五四红旗团委</li>
+                            <li>2014年省国资委信访稳定工作先进单位</li>
+                            <li>2016年全国工程建设行业报纸“银页”奖</li>
+                        </ul>
+                    </blockquote>
+                </td>
+                <td>
+                    <blockquote>
+                        <ul>
+                            <li>2016年河北省建设行业科技进步奖</li>
+                            <li>2016年河北省土木工程李春奖</li>
+                        </ul>
+                    </blockquote>
+                </td>
+                <td>
+                    <blockquote>
+                        <ul>
+                            <li>2016年全国建筑业AAA级信用企业</li>
+                            <li>2015年河北省模范职工之家</li>
+                        </ul>
+                    </blockquote>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>
+{template "content","foot"}
+<script>
+    $(".honor_tit ul li").hover(function(){
+                $(this).find("dl").slideDown("0.2");
+            },function(){
+                $(this).find("dl").slideUp("0.2");
+            }
+    )
+</script>

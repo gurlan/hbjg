@@ -1,0 +1,8 @@
+<div class="proMenu">
+    {pc:content action="category" catid="$parent" num="2" siteid="$siteid" order="listorder ASC"}
+    {loop $data $k=>$r}
+    <a href="{$r[url]}" {if $r[catid] == $catid}class="current"{/if}>{$r[catname]}</a>
+    {/loop}
+    {/pc}
+
+</div>

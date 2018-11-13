@@ -1,0 +1,23 @@
+{template "content","head"}
+{template "content","ad"}
+<div class="container inner contanershadow">
+    {template "content","nav"}
+    <div class="content right">
+        {template "content","position"}
+        <div class="com_con">
+            <ul class="news_col">
+                {pc:content action="lists" catid="$catid" num="12" order="listorder ASC,inputtime desc" page="$page"}
+                {loop $data $r}
+                <li><a href="{$r[url]}" title=" {$r[title]}">{$r[title]}</a><span>{date("Y-m-d",$r[inputtime])}</span></li>
+                <li><a href="{$r[url]}" title="{$r[title]}">{$r[title]}</a><span>{date("Y-m-d",$r[inputtime])}</span>
+                </li>
+                {/if}
+            </ul>
+
+            <div class="page page1">
+               {$pages}
+            </div>
+        </div>
+    </div>
+</div>
+{template "content","foot"}

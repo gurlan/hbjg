@@ -1,0 +1,39 @@
+{template "content","head"}
+{template "content","ad"}
+<div class="container inner contanershadow">
+    {template "content","nav"}
+    <div class="content right">
+        {template "content","position"}
+        <div class="com_con">
+            <ul class="news_img">
+                {pc:content action="lists" catid="$catid" num="12" order="listorder ASC,inputtime desc" page="$page"}
+                {loop $data $r}
+                <li>
+                    <div><a href="{$r[url]}" title="{$r[title]}"><span><img src="{$r[thumb]}" width="262" height="164"></span><span class="news_imghover"><img src="{$r[thumb]}"></span></a></div>
+                    <p><a href="{$r[url]}" title="{$r[title]}">{$r[title]}</a></p>
+                </li>
+                {/loop}
+            </ul>
+
+            <div class="page page1">
+                {$pages}
+            </div>
+        </div>
+    </div>
+</div>
+{template "content","foot"}
+
+<script>
+    /*$(".news_img li div").hover(
+     function(),function())
+     */
+    $(function(){
+                for(var i=0;i<$(".news_img li").length;i++){
+                    if((i+1)%3==0)
+                    {
+                        $(".news_img li").eq(i).css("padding-right","0");
+                    }
+                }
+            }
+    )
+</script>

@@ -15,9 +15,9 @@ return array (
   19 => 
   array (
     'posid' => '19',
-    'modelid' => '16',
-    'catid' => '22',
-    'name' => '精品推荐',
+    'modelid' => '1',
+    'catid' => '10',
+    'name' => '首页轮播',
     'maxnum' => '20',
     'extention' => '',
     'listorder' => '0',
