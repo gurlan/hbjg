@@ -85,12 +85,12 @@
                 {/loop}
 
                 {pc:content action="lists" catid="159" num="7" order="listorder ASC,inputtime desc" page="$page"}
-                {php $i=0}
-                {if $i>0}
+                {php $i = 0}
                 {loop $data $r}
+                {$i++}
+                {if $i>1}
                 <li><a href="{$r[url]}" title="{$r[title]}">{$r[title]}</a><span>({date("m-d",$val[inputtime])})</span></li>
                 {/if}
-                {php $i++}
                 {/loop}
 
             </ul>

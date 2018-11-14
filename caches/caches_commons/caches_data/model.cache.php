@@ -50,7 +50,7 @@ return array (
   array (
     'modelid' => '14',
     'siteid' => '1',
-    'name' => 'banner',
+    'name' => '荣誉列表',
     'description' => '',
     'tablename' => 'banner',
     'setting' => '',
@@ -58,7 +58,7 @@ return array (
     'items' => '0',
     'enablesearch' => '1',
     'disabled' => '0',
-    'default_style' => 'longchikeji',
+    'default_style' => '',
     'category_template' => 'category',
     'list_template' => 'list',
     'show_template' => 'show',

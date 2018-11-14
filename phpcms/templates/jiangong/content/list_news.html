@@ -1,9 +1,19 @@
 {template "content","head"}
 {template "content","ad"}
 <div class="container inner contanershadow">
-    {template "content","nav"}
+    {template "content","news_nav"}
     <div class="content right">
-        {template "content","menu"}
+        <div class="loc loc1">
+            <h3 class="left">{$CATEGORYS[$catid][catname]}</h3>
+            <ul class="loc_menu loc_menu_news right">
+                <li><a href="/" class="home">首页</a></li>
+                {pc:content action="category" catid="$cat" num="25" siteid="$siteid" order="listorder ASC"}
+                {loop $data $k=>$r}
+                <li><a href="{$r[url]}" {if $k==$parent} class="now" {/if}>{$r[catname]}</a></li>
+                {/loop}
+                {/pc}
+            </ul>
+        </div>
         <div class="com_con">
             <ul class="news_col">
                 {pc:content action="lists" catid="$catid" num="12" order="listorder ASC,inputtime desc" page="$page"}
@@ -12,9 +22,9 @@
                 {if $i<2}
                 <li class="first">
                     <div class="tit"><a href="{$r[url]}" title=" {$r[title]}">
-                        {$r[description]}</a><span>{date("Y-m-d",$r[inputtime])}</span></div>
+                        {$r[title]}</a><span>{date("Y-m-d",$r[inputtime])}</span></div>
                     <div class="txt">&nbsp;{$r[description]}
-                    <a href="{$r[url]}">{$r[title]}</a></div>
+                        <a href="{$r[url]}">{$r[title]}</a></div>
                 </li>
                 {/if}
                 {php $i++}
@@ -22,7 +32,8 @@
 
                 {loop $data $r}
                 {if $i>1}
-                <li><a href="{$r[url]}" title=" {$r[title]}">{$r[title]}</a><span>{date("Y-m-d",$r[inputtime])}</span></li>
+                <li><a href="{$r[url]}" title=" {$r[title]}">{$r[title]}</a><span>{date("Y-m-d",$r[inputtime])}</span>
+                </li>
                 <li><a href="{$r[url]}" title="{$r[title]}">{$r[title]}</a><span>{date("Y-m-d",$r[inputtime])}</span>
                 </li>
                 {/if}
@@ -30,7 +41,7 @@
             </ul>
 
             <div class="page page1">
-               {$pages}
+                {$pages}
             </div>
         </div>
     </div>
