@@ -20,7 +20,7 @@ function PCMSAD(PID) {
 function statAD() {
 	var new_element = document.createElement("script"); 
 	new_element.type = "text/javascript";
-	new_element.src="http://hard.hexiflower.com/index.php?m=poster&c=index&a=show&siteid="+this.SiteID+"&id="+this.ADID+"&spaceid="+this.PosID; 
+	new_element.src="http://jiangong.hexiflower.com/index.php?m=poster&c=index&a=show&siteid="+this.SiteID+"&id="+this.ADID+"&spaceid="+this.PosID; 
 	document.body.appendChild(new_element);
 }
 
@@ -49,8 +49,8 @@ cmsAD_11.PosID = 11;
 cmsAD_11.ADID = 13; 
 cmsAD_11.ADType = "images"; 
 cmsAD_11.ADName = "第三张"; 
-cmsAD_11.ADContent = "{'Images':[{'imgADLinkUrl':'%23','imgADAlt':'','ImgPath':'http://hard.hexiflower.com/uploadfile/2018/1109/20181109095258259.jpg'}],'imgADLinkTarget':'New','Count':'1','showAlt':'Y'}"; 
-cmsAD_11.URL = "http://hard.hexiflower.com/index.php?m=poster&c=index"; 
+cmsAD_11.ADContent = "{'Images':[{'imgADLinkUrl':'%23','imgADAlt':'','ImgPath':'http://jiangong.hexiflower.com/uploadfile/2018/1114/20181114102247103.jpg'}],'imgADLinkTarget':'New','Count':'1','showAlt':'Y'}"; 
+cmsAD_11.URL = "http://jiangong.hexiflower.com/index.php?m=poster&c=index"; 
 cmsAD_11.SiteID = 1; 
 cmsAD_11.Width = 1920; 
 cmsAD_11.Height = 600; 

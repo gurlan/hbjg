@@ -1,46 +1,23 @@
 {template "content","head"}
-{template "content","position"}
-    <div class="main w1200 fix">
-        <div class="main_nav le">
-            <em>
-                <h3>搜索结果</h3>
-                <span></span>
-            </em>
-            <ul>
+{template "content","ad"}
+<div class="container inner contanershadow">
+    {template "content","news_nav"}
+    <div class="content right">
+        <div class="loc loc1">
+            <h3 class="left">{$CATEGORYS[$catid][catname]}</h3>
 
-            </ul>
         </div>
-        <div class="news mian_right rt">
-            <h3>获得约 <?php echo $totalnums; ?> 条结果 （用时{sprintf("%01.2f", $execute_time)} 秒）</h3>
 
-            <ul class="fix news_ul">
+        <div class="com_con">
+            <ul class="news_col">
                 {loop $datas $i $r}
-                <li class="fix">
-                    <a href="{$r[url]}">
-                        <div class="news_left le">
-                            <b>{date("d",$r[inputtime])}</b>
-                            <span>{date("Y/m",$r[inputtime])}</span>
-                        </div>
-                        <div class="news_main le">
-                            <img src="{$r[thumb]}">
-                        </div>
-                        <div class="news_right le">
-                            <h4>{$r[title]}</h4>
-                            <p>
-                                {$r[description]}
-                            </p>
-                        </div>
-                    </a>
-                </li>
+                <li><a href="{$r[url]}" title=" {$r[title]}">{$r[title]}</a><span>{date("Y-m-d",$r[inputtime])}</span></li>
                 {/loop}
-                {if empty($datas)}未找到结果{/if}
             </ul>
-
+            <div class="page page1">
+                {$pages}
+            </div>
         </div>
     </div>
-<script type="text/javascript" src="{JS_PATH}search_history.js"></script>
-{if $setting['suggestenable']}
-<script type="text/javascript" src="{JS_PATH}jquery.suggest.js"></script>
-<script type="text/javascript" src="{JS_PATH}search_suggest.js"></script>
-{/if}
+</div>
 {template "content","foot"}

@@ -7,7 +7,7 @@
     <meta name="keywords" content="<?php echo $SEO['keyword'];?>">
     <meta name="description" content="<?php echo $SEO['description'];?>">
 <link rel="stylesheet" ID="skin" type="text/css" />
-    <link rel="stylesheet" href="/statics/jiangong/css/css.css" type="text/css" />
+
 <script type="text/javascript" src="/statics/jiangong/js/jquery-1.9.1.js" ></script>
 <script type="text/javascript" src="/statics/jiangong/js/jquery.SuperSlide.2.1.1.js" ></script>
 <script type="text/javascript" src="/statics/jiangong/js/MSClass.js" ></script>
@@ -100,7 +100,7 @@ document.oncontextmenu=stop;
 <?php if(defined('IN_ADMIN')  && !defined('HTML')) {echo "<div class=\"admin_piao\" pc_action=\"content\" data=\"op=content&tag_md5=c7d458a1e72062ec730d2aa044a863e7&action=lists&catid=26&num=1&moreinfo=1+order%3D&return=config\"><a href=\"javascript:void(0)\" class=\"admin_piao_edit\">编辑</a>";}$content_tag = pc_base::load_app_class("content_tag", "content");if (method_exists($content_tag, 'lists')) {$config = $content_tag->lists(array('catid'=>'26','moreinfo'=>'1 order=','limit'=>'1',));}?>
 <?php $config = $config[1]?>
 <div class="header">
-  <div class="inner"> <a href="/"  class="logo left"><img src="/statics/jiangong/images/logo.png" ></a>
+  <div class="inner"> <a href="/"  class="logo left"><img src="<?php echo $config['top_logo'];?>" ></a>
     <div class="hrig right">
       <div class="hriglink left"><a href="#"  >企业邮箱</a><a href=#" >网站地图</a><a href="" style="background:none;">加入收藏</a></div>
       <div class="cols left"><a onclick="changecss('/statics/jiangong/css/style.css')" href="javascript:return false;" title="蓝色主题"><img src="/statics/jiangong/images/blue.png" ></a><a onclick="changecss('/statics/jiangong/css/style-red.css')" href="javascript:return false;" title="红色主题"><img src="/statics/jiangong/images/red.png" ></a></div>

@@ -3,7 +3,7 @@
 <div class="container contanershadow">
     <div class="loc inner" id="honor_loc">
         <h3 class="left">{$CATEGORYS[$catid][catname]}</h3>
-        <p class="right"><a href="/" class="home">首页</a>  > {catpos($catid)}</p>
+        <p class="right"><a href="/" class="home">首页</a>{catpos($catid)}</p>
     </div>
 
 
@@ -58,4 +58,8 @@
                 $(this).find("dl").slideUp("0.2");
             }
     )
+</script>
+<script>
+
+    $('.right>a:last').addClass('last')
 </script>

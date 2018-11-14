@@ -7,7 +7,7 @@
     <meta name="keywords" content="{$SEO['keyword']}">
     <meta name="description" content="{$SEO['description']}">
 <link rel="stylesheet" ID="skin" type="text/css" />
-    <link rel="stylesheet" href="/statics/jiangong/css/css.css" type="text/css" />
+
 <script type="text/javascript" src="/statics/jiangong/js/jquery-1.9.1.js" ></script>
 <script type="text/javascript" src="/statics/jiangong/js/jquery.SuperSlide.2.1.1.js" ></script>
 <script type="text/javascript" src="/statics/jiangong/js/MSClass.js" ></script>
@@ -100,7 +100,7 @@ document.oncontextmenu=stop;
 {pc:content action="lists" catid="26" num="1" moreinfo=1 order="listorder ASC,inputtime desc" return="config"}
 {php $config = $config[1]}
 <div class="header">
-  <div class="inner"> <a href="/"  class="logo left"><img src="/statics/jiangong/images/logo.png" ></a>
+  <div class="inner"> <a href="/"  class="logo left"><img src="{$config[top_logo]}" ></a>
     <div class="hrig right">
       <div class="hriglink left"><a href="#"  >企业邮箱</a><a href=#" >网站地图</a><a href="" style="background:none;">加入收藏</a></div>
       <div class="cols left"><a onclick="changecss('/statics/jiangong/css/style.css')" href="javascript:return false;" title="蓝色主题"><img src="/statics/jiangong/images/blue.png" ></a><a onclick="changecss('/statics/jiangong/css/style-red.css')" href="javascript:return false;" title="红色主题"><img src="/statics/jiangong/images/red.png" ></a></div>

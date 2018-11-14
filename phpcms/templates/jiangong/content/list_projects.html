@@ -18,9 +18,11 @@
         <ul class="loc_menu right">
             <li><a href="/" class="home">首页</a></li>
             {pc:content action="category" catid="$cat" num="25" siteid="$siteid" order="listorder ASC"}
+            {php $i=1}
                 {loop $data $k=>$r}
-                     <li {if $r[catid]!=$parentid}class="last"{/if}><a href="{$r[url]}" {if $r[catid] == $parentid} class="now"  {/if}>{$r[catname]}</a></li>
-                 {/loop}
+                     <li {if $i==count($data)}class="last"{/if}><a href="{$r[url]}" {if $r[catid] == $parentid} class="now"  {/if}>{$r[catname]}</a></li>
+                {php $i++}
+            {/loop}
             {/pc}
         </ul>
         </div>

@@ -41,7 +41,7 @@
         {php $banner = getads(12)}
         <img src="{$banner[d][0][imageurl]}"/>
     </div>
-    {pc:content action="position" posid="18" order="listorder ASC" num="5"}
+    {pc:content action="position" posid="19" order="listorder ASC" num="5"}
     <div class="hotnews inner">
         <div class="focusPic left">
             <div class="picnews">
@@ -103,12 +103,41 @@
             <a href="" target="_blank">  <img src="{$banner[d][0][imageurl]}"/></a>
         </div>
         <div class="midads1_search right">
-            <form action="http://www.hbjgjt.cn/search.php" method="post">
-                <input type="text" class="txt left" name="keywords" value="热搜：党的群众路线教育实践活动"
-                       onfocus="if(this.value=='热搜：党的群众路线教育实践活动'){this.value='';}"
-                       onblur="if(this.value==''){this.value='热搜：党的群众路线教育实践活动';}"><input type="submit" value=" "
-                                                                                         class="btn right">
+            <form id="form" action="{APP_PATH}index.php?m=search&c=index&a=init&typeid=0&siteid=1&q=" method="get" onsubmit="return false">
+                <input type="text" class="txt left" name="q" value="党的群众路线教育实践活动">
+                <input  type=""  id="search" class="btn right">
             </form>
+            <script>
+
+                $('[name=q]').keydown(function(event){
+                    if(event.keyCode ==13) {
+
+                        $('#search').click();
+                    }
+                })
+                $('#search').click(function () {
+
+                    var q = $('[name=q]').val();
+
+                    if(!q){
+
+                        alert('请输入关键词');
+
+                        return
+
+                    }
+
+                    var url = $('#form').attr('action');
+
+
+                    url = url+q;
+
+                    alert(url)
+                    window.location.href=url;
+
+                })
+
+            </script>
         </div>
     </div>
     <div class="colcon1 inner">
@@ -193,10 +222,11 @@
             </div>
             {pc:content action="lists" catid="210" num="1" order="listorder ASC,inputtime desc" page="$page"}
             {loop $data $r}
+            {php $video = $r[video]}
             <div class="videoimg">
                 <a href="javascript:void(0);" id="play_btn"><img src="{$r[thumb]}"></a>
             </div>
-            <div class="videotit"><a href="">{$r[title]}</a></div>
+            <div class="videotit"><a href="{$r[url]}">{$r[title]}</a></div>
             {/loop}
         </div>
 
@@ -336,13 +366,13 @@
                     <div class="colconL_tit">
                         <ul class="channel4" id="tab6">
                             <li><a href="javascript:void(0);" class="now">{$CATEGORYS[174][catname]}</a></li>
-                            <li><a href="javascript:void(0);">{$CATEGORYS[175][catname]}</a></li>
-                            <li><a href="javascript:void(0);">{$CATEGORYS[176][catname]}</a></li>
+                            <li><a href="javascript:void(0);">{$CATEGORYS[212][catname]}</a></li>
+                            <li><a href="javascript:void(0);">{$CATEGORYS[213][catname]}</a></li>
                         </ul>
                         <ul class="pub_more" id="tab6_more">
                             <li><a href="{$CATEGORYS[174][url]}">更多</a></li>
-                            <li style="display:none;"><a href="{$CATEGORYS[175][url]}">更多</a></li>
-                            <li style="display:none;"><a href="{$CATEGORYS[176][url]}">更多</a></li>
+                            <li style="display:none;"><a href="{$CATEGORYS[212][url]}">更多</a></li>
+                            <li style="display:none;"><a href="{$CATEGORYS[213][url]}">更多</a></li>
                         </ul>
                     </div>
                     <div class="block_six">
@@ -355,7 +385,7 @@
                     </div>
                     <div class="block_six" style="display:none;">
                         <ul class="listcon listcon_zc">
-                            {pc:content action="lists" catid="175" num="8" order="listorder ASC,inputtime desc" page="$page"}
+                            {pc:content action="lists" catid="212" num="8" order="listorder ASC,inputtime desc" page="$page"}
                             {loop $data $r}
                             <li><a href="{$r[url]}" title="{$r[title]}">{$r[title]}</a></li>
                             {/loop}
@@ -363,7 +393,7 @@
                     </div>
                     <div class="block_six" style="display:none;">
                         <ul class="listcon listcon_zc">
-                            {pc:content action="lists" catid="176" num="8" order="listorder ASC,inputtime desc" page="$page"}
+                            {pc:content action="lists" catid="213" num="8" order="listorder ASC,inputtime desc" page="$page"}
                             {loop $data $r}
                             <li><a href="{$r[url]}" title="{$r[title]}">{$r[title]}</a></li>
                             {/loop}
@@ -376,17 +406,17 @@
                 <div class="pannel01 left">
                     <div class="colconL_tit">
                         <ul class="channel4" id="tab7">
-                            <li><a href="javascript:void(0);" class="now">{$CATEGORYS[177][catname]}</a></li>
+                            <li><a href="javascript:void(0);" class="now">{$CATEGORYS[214][catname]}</a></li>
                             <li><a href="javascript:void(0);">{$CATEGORYS[178][catname]}</a></li>
                         </ul>
                         <ul class="pub_more" id="tab7_more">
-                            <li><a href="{$CATEGORYS[177][url]}">更多</a></li>
+                            <li><a href="{$CATEGORYS[214][url]}">更多</a></li>
                             <li style="display:none;"><a href="{$CATEGORYS[178][url]}">更多</a></li>
                         </ul>
                     </div>
                     <div class="block_seven lt_bg">
                         <ul class="listcon listcon_zc">
-                            {pc:content action="lists" catid="177" num="8" order="listorder ASC,inputtime desc" page="$page"}
+                            {pc:content action="lists" catid="214" num="8" order="listorder ASC,inputtime desc" page="$page"}
                             {loop $data $r}
                             <li><a href="{$r[url]}" title="{$r[title]}">{$r[title]}</a></li>
                             {/loop}
@@ -550,9 +580,10 @@
     <a id="shut" class="shut">×</a>
     <h3>视频播放</h3>
     <div id="video" class="overlay-video-v2-plug">
-        <embed id="CuPlayerVideo_video_embed" src="JZminiPlayer.swf" type="application/x-shockwave-flash"
-               allowscriptaccess="always" allowfullscreen="true" wmode="Transparent"
-               flashvars="autoplay=true&file=cn.flv&img=start.jpg" height="430" width="650">
+
+        </embed>
+        <iframe height=440 width=630 src='{$video}' frameborder=0 'allowfullscreen'></iframe>
+
     </div>
 </div>
 </body>

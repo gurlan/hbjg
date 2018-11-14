@@ -9,8 +9,8 @@
                 {pc:content action="lists" catid="$catid" num="12" order="listorder ASC,inputtime desc" page="$page"}
                 {loop $data $r}
                 <li>
-                    <div class="pic"><a href="{php echo json_decode($r[file],true)[0][fileurl]}" title="{$r[title]}"><img src="{$r[thumb]}"></a></div>
-                    <div class="txt"><a href="{php echo json_decode($r[file],true)[0][fileurl]}" title="{$r[title]}">{$r[title]}</a></div>
+                    <div class="pic"><a href="<?php  $file = json_decode($r[file],true);echo $file[0][fileurl] ?>" title="{$r[title]}"><img src="{$r[thumb]}"></a></div>
+                    <div class="txt"><a href="<?php $file = json_decode($r[file],true);echo $file[0][fileurl] ?>" title="{$r[title]}">{$r[title]}</a></div>
                 </li>
                 {/loop}
             </ul>

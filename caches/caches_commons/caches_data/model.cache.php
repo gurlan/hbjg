@@ -165,7 +165,7 @@ return array (
   array (
     'modelid' => '19',
     'siteid' => '1',
-    'name' => '营销网络',
+    'name' => '招聘',
     'description' => '',
     'tablename' => 'shop',
     'setting' => '',

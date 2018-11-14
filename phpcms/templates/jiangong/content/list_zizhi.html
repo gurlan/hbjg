@@ -10,7 +10,7 @@
         <ul>
             {pc:content action="category" catid="$cat" num="25" siteid="$siteid" order="listorder ASC"}
             {loop $data $k=>$r}
-            <li><a href="{$r[url]}" {if $k==$parent} class="now"{/if}>{$r[catname]}</a></li>
+            <li><a href="{$r[url]}" {if $r[catid]==$catid} class="now"{/if}>{$r[catname]}</a></li>
             {/loop}
             {/pc}
         </ul>
@@ -45,3 +45,7 @@
 
 </div>
 {template "content","foot"}
+<script>
+
+    $('.right>a:last').addClass('last')
+</script>

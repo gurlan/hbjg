@@ -14,29 +14,30 @@
                 {/pc}
             </ul>
         </div>
+
         <div class="com_con">
             <ul class="news_col">
-                {pc:content action="lists" catid="$catid" num="12" order="listorder ASC,inputtime desc" page="$page"}
+                {pc:content action="lists" catid="$catid" num="10" order="listorder ASC,inputtime desc" page="$page"}
                 {php $i=0}
                 {loop $data $r}
-                {if $i<2}
                 <li class="first">
                     <div class="tit"><a href="{$r[url]}" title=" {$r[title]}">
                         {$r[title]}</a><span>{date("Y-m-d",$r[inputtime])}</span></div>
                     <div class="txt">&nbsp;{$r[description]}
-                        <a href="{$r[url]}">{$r[title]}</a></div>
+                        <a href="{$r[url]}">查看更多</a></div>
+                    {php $i++}
                 </li>
-                {/if}
-                {php $i++}
+                  <?php if($i>1){break;} ?>
                 {/loop}
 
+
+                {php $i=0}
                 {loop $data $r}
                 {if $i>1}
                 <li><a href="{$r[url]}" title=" {$r[title]}">{$r[title]}</a><span>{date("Y-m-d",$r[inputtime])}</span>
                 </li>
-                <li><a href="{$r[url]}" title="{$r[title]}">{$r[title]}</a><span>{date("Y-m-d",$r[inputtime])}</span>
-                </li>
                 {/if}
+                {php $i++}
                 {/loop}
             </ul>
 
